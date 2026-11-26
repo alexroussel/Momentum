@@ -23,8 +23,11 @@
 - Smoke test of a production-mode build: `smoke test: ok` in ~0.8 s.
 - Dark/light themes and EN/FR switching checked visually in the browser preview.
 
+### Verified in CI (run 45791361195)
+- All 5 build jobs green with smoke test passing: macOS universal, Windows x64, Windows ARM64, Linux x64,
+  Linux ARM64. Artifacts: .dmg, .msi + .exe (x64), .exe (ARM64), .AppImage/.deb/.rpm (x64 + ARM64).
+
 ### Not yet verified
-- CI results on the 5 runners (see the Build workflow).
 - Real-hardware launch on macOS, Linux and ARM64 machines (CI smoke tests only).
 - RAM/startup budgets (measured in phase 8).
 

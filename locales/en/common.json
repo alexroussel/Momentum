@@ -1,0 +1,43 @@
+{
+  "app": {
+    "name": "Momentum",
+    "tagline": "Focus in sessions. Block distractions. See your progress."
+  },
+  "timer": {
+    "prompt": "What are you focusing on?",
+    "start": "Start session",
+    "comingSoon": "The dial arrives in the next build."
+  },
+  "window": {
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "restore": "Restore",
+    "close": "Close"
+  },
+  "appearance": {
+    "theme": "Theme",
+    "themes": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System"
+    }
+  },
+  "language": {
+    "label": "Language",
+    "system": "System",
+    "names": {
+      "en": "English",
+      "fr": "Français"
+    }
+  },
+  "toolbar": {
+    "analytics": "Analytics",
+    "miniPlayer": "Mini player",
+    "settings": "Settings"
+  },
+  "status": {
+    "schema": "DB v{{version}}",
+    "goal_one": "{{count}} session today",
+    "goal_other": "{{count}} sessions today"
+  }
+}

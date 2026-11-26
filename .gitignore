@@ -1,0 +1,29 @@
+# Node
+node_modules/
+dist/
+*.log
+.vite/
+
+# Rust
+target/
+
+# Tauri
+apps/desktop/src-tauri/gen/schemas/
+apps/desktop/src-tauri/binaries/
+
+# Secrets — never commit
+*.key
+*.key.pub.bak
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Local agent config
+.claude/

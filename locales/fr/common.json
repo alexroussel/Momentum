@@ -1,0 +1,43 @@
+{
+  "app": {
+    "name": "Momentum",
+    "tagline": "Concentre-toi par sessions. Bloque les distractions. Vois tes progrès."
+  },
+  "timer": {
+    "prompt": "Sur quoi te concentres-tu ?",
+    "start": "Démarrer la session",
+    "comingSoon": "Le cadran arrive dans la prochaine version."
+  },
+  "window": {
+    "minimize": "Réduire",
+    "maximize": "Agrandir",
+    "restore": "Restaurer",
+    "close": "Fermer"
+  },
+  "appearance": {
+    "theme": "Thème",
+    "themes": {
+      "dark": "Sombre",
+      "light": "Clair",
+      "system": "Système"
+    }
+  },
+  "language": {
+    "label": "Langue",
+    "system": "Système",
+    "names": {
+      "en": "English",
+      "fr": "Français"
+    }
+  },
+  "toolbar": {
+    "analytics": "Analyses",
+    "miniPlayer": "Mini lecteur",
+    "settings": "Réglages"
+  },
+  "status": {
+    "schema": "BD v{{version}}",
+    "goal_one": "{{count}} session aujourd'hui",
+    "goal_other": "{{count}} sessions aujourd'hui"
+  }
+}

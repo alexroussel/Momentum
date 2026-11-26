@@ -1,0 +1,76 @@
+/*
+ * Momentum design tokens — source of truth: docs/DESIGN.md §1.
+ * Themes switch through [data-theme] on <html>; the active category sets --cat.
+ */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-app: #1e1e20;
+  --bg-panel: #2a2a2d;
+  --bg-card: #323236;
+  --bg-hover: #3a3a3f;
+  --bg-inset: #161618;
+  --border: rgb(63 63 69 / 0.6);
+
+  --text-1: #f2f2f3;
+  --text-2: #a1a1aa;
+  --text-3: #6b6b73;
+
+  --now-line: #ff4d4f;
+  --shadow-popover: 0 8px 24px rgb(0 0 0 / 0.35);
+  --glow-strength: 45%;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-app: #f4f3ef;
+  --bg-panel: #fbfaf7;
+  --bg-card: #ffffff;
+  --bg-hover: #eceae4;
+  --bg-inset: #e9e7e1;
+  --border: #dedbd3;
+
+  --text-1: #17171a;
+  --text-2: #55555e;
+  --text-3: #8c8c95;
+
+  --now-line: #e5484d;
+  --shadow-popover: 0 8px 24px rgb(23 23 26 / 0.12);
+  --glow-strength: 25%;
+}
+
+:root {
+  /* Active category tint (default category "Focus"). */
+  --cat: #e5484d;
+  --cat-hi: oklch(from var(--cat) calc(l + 0.08) c h);
+  --cat-soft: color-mix(in oklch, var(--cat) 16%, var(--bg-app));
+  --cat-glow: color-mix(in oklch, var(--cat) var(--glow-strength), transparent);
+  --brk: oklch(from var(--cat) 0.72 calc(c * 0.3) 235);
+  --overtime-bg: color-mix(in oklch, var(--cat) 55%, var(--bg-app));
+  --brk-overtime-bg: color-mix(in oklch, var(--brk) 25%, #0e0e10);
+  --focus-ring: color-mix(in oklch, var(--cat) 70%, transparent);
+
+  --radius-window: 12px;
+  --radius-card: 12px;
+  --radius-popover: 10px;
+  --radius-input: 10px;
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-hover: 120ms;
+  --dur-phase: 320ms;
+
+  --font-ui: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* With a native window material (Mica / vibrancy) the app background lets it show through. */
+[data-vibrancy="on"][data-theme="dark"] {
+  --bg-app: rgb(30 30 32 / 0.78);
+}
+[data-vibrancy="on"][data-theme="light"] {
+  --bg-app: rgb(244 243 239 / 0.82);
+}

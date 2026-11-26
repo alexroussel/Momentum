@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+@import "./tokens.css";
+
+/* Expose tokens to Tailwind utilities (bg-app, text-1, border-line, font-mono, …). */
+@theme inline {
+  --color-app: var(--bg-app);
+  --color-panel: var(--bg-panel);
+  --color-card: var(--bg-card);
+  --color-hover: var(--bg-hover);
+  --color-inset: var(--bg-inset);
+  --color-line: var(--border);
+  --color-1: var(--text-1);
+  --color-2: var(--text-2);
+  --color-3: var(--text-3);
+  --color-cat: var(--cat);
+  --color-cat-soft: var(--cat-soft);
+  --font-sans: var(--font-ui);
+  --font-mono: var(--font-mono);
+  --radius-card: var(--radius-card);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg-app);
+    color: var(--text-1);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    line-height: 20px;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+    overflow: hidden;
+    transition: background-color 2s var(--ease-in-out);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Mono caps label: "3 SESSIONS · 0 DISTRACTED · 3H 20M FOCUS" */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-3);
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 44px;
+    padding: 0 28px;
+    border-radius: 999px;
+    background: var(--cat);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 0 32px var(--cat-glow);
+    transition:
+      transform var(--dur-hover) var(--ease-out),
+      box-shadow var(--dur-hover) var(--ease-out);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 44px var(--cat-glow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Momentum",
+  "mainBinaryName": "momentum",
+  "version": "../package.json",
+  "identifier": "app.momentum.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "macOSPrivateApi": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Momentum",
+        "width": 1120,
+        "height": 760,
+        "minWidth": 420,
+        "minHeight": 620,
+        "center": true,
+        "decorations": false,
+        "transparent": true,
+        "backgroundColor": "#1E1E20"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Productivity",
+    "shortDescription": "Focus in sessions. Block distractions. See your progress.",
+    "longDescription": "Momentum is a focus timer: set an intention, turn the dial, focus, reflect, take a break — and see your progress over time. Local-first, free and open source.",
+    "copyright": "© 2026 The Momentum contributors. MIT License.",
+    "license": "MIT",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "signingIdentity": "-"
+    },
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper" },
+      "nsis": { "installMode": "currentUser" }
+    },
+    "linux": {
+      "deb": { "depends": [] },
+      "rpm": { "depends": [] }
+    }
+  }
+}

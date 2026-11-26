@@ -1,0 +1,21 @@
+{
+  "name": "momentum-monorepo",
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@12.18.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @momentum/desktop tauri dev",
+    "build": "pnpm --filter @momentum/desktop tauri build",
+    "lint": "pnpm -r lint && node scripts/check-locales.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "prettier": "^3.10.1"
+  }
+}

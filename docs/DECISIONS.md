@@ -138,3 +138,7 @@ Format: context → options → decision → consequences. All ADRs below were a
 - `tauri-build` only embeds the Common Controls v6 manifest into binaries; test executables then crash with
   `STATUS_ENTRYPOINT_NOT_FOUND`. `build.rs` disables the default manifest and embeds
   `windows-app-manifest.xml` into every link target.
+
+## ADR-024 — macOS runner image
+- `macos-14` is no longer available on GitHub-hosted runners (job rejected: "configuration not supported").
+  Builds use `macos-15` (Apple Silicon); the universal binary is still cross-built for x86_64.
